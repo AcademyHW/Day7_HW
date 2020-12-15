@@ -1,0 +1,23 @@
+//Fill Rating Table
+INSERT INTO task7.rating(CourseID, StudentID, Rating) 
+VALUES (1,1,5),
+		(1,2,4),
+		(1,3,3),
+		(1,4,3),
+		(1,5,3),
+		(2,3,4),
+		(2,3,5);
+
+//Query for Count
+SELECT COUNT(*) as count
+	FROM students a 
+	JOIN rating b ON (a.StudentID = b.StudentID)
+	JOIN courses c ON (c.CourseID=b.CourseID)
+	WHERE (CourseName='Programming') and(Rating=5)
+
+//Query for FullNames
+SELECT StudentFullName
+	FROM students a 
+	JOIN rating b ON (a.StudentID = b.StudentID)
+	JOIN courses c ON (c.CourseID=b.CourseID)
+	WHERE (CourseName='Programming') and(Rating=5)
